@@ -1,18 +1,5 @@
 package com.company;
 
-class Road extends MapItem{
-    private Position position;
-
-    public Road(Position position) {
-        this.position = position;
-    }
-
-    @Override
-    public MapItemType getType() {
-        return MapItemType.ROAD;
-    }
-}
-
 public class Map {
     private int width = 3;
     private int height = 3;
@@ -37,7 +24,17 @@ public class Map {
         };
     }
 
-    public MapItem getRegion(Position position) {
+    // Return all MapItems around the position
+    public MapItem[] getSurroudings(Position position) {
+        Position[] positionsSurroundings = position.getSurroundings();
+        MapItem[] surroundings = new MapItem[positionsSurroundings.length];
+        int surIndex = 0;
+        for (int i = 0; i < positionsSurroundings.length; i++)
+            surroundings[surIndex++] = getItem(positionsSurroundings[i]);
+        return surroundings;
+    }
+
+    public MapItem getItem(Position position) {
         if (position.isInRange(width, height))
             return worldsMap[position.x][position.y];
         return null;

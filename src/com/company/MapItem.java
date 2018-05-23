@@ -4,6 +4,19 @@ enum MapItemType {
     CROSSING, ROAD
 }
 
-public abstract class MapItem {
-    public abstract MapItemType getType();
+class MapItem {
+    private Position position;
+    private MapItemType type;
+
+    public MapItem(Position position) {
+        this.position = position;
+    }
+
+    public MapItemType getType() {
+        return this.type;
+    }
+
+    public Position getPosition() {
+        return this.position;
+    }
 }

@@ -1,14 +1,19 @@
-package com.company;
+package com.company.Map;
 
-import static com.company.Color.*;
+import com.company.Axis;
+import com.company.Map.Color;
+
+import static com.company.Map.Color.*;
 
 public class Light {
-    private int id;
+    private String id;
     private Color color;
+    private Axis axis;
 
-    public Light(int id, Color color) {
+    public Light(String id, Color color, Axis axis) {
         this.id = id;
         this.color = color;
+        this.axis = axis;
     }
 
     public Color getColor() {
@@ -20,7 +25,7 @@ public class Light {
             color = GREEN;
         else
             color = RED;
-        System.out.println(toString());
+        //System.out.println(toString());
     }
 
     public String toString() {

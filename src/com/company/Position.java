@@ -1,10 +1,10 @@
 package com.company;
 
-import java.util.Objects;
+import static com.company.Axis.*;
 
 public class Position {
-    public int x;
-    public int y;
+    private int x;
+    private int y;
 
     public Position(int x, int y) {
 
@@ -29,6 +29,20 @@ public class Position {
             new Position(x - 1, y),
             new Position(x, y - 1)
         };
+    }
+
+    public Axis getCommonAxis(Position position) {
+        if (this.x == position.getX())
+            return X;
+        return Y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
     }
 
     @Override

@@ -1,15 +1,14 @@
-package com.company;
+package com.company.Map;
 
-enum MapItemType {
-    CROSSING, ROAD
-}
+import com.company.Position;
 
-class MapItem {
+public class MapItem {
     private Position position;
     private MapItemType type;
 
-    public MapItem(Position position) {
+    public MapItem(Position position, MapItemType type) {
         this.position = position;
+        this.type = type;
     }
 
     public MapItemType getType() {

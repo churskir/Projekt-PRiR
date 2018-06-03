@@ -9,6 +9,7 @@ public class Map {
     private int height;
     private MapItem[][] worldsMap;
     private ArrayList<Crossing> crossings = new ArrayList<>();
+    private ArrayList<Road> roads = new ArrayList<>();
 
     public Map() {
         this.worldsMap = new MapItem[][] {
@@ -41,9 +42,12 @@ public class Map {
         assert (x < width);
         assert (y < height);
         this.worldsMap[y][x] = mapItem;
-        if (mapItem != null)
+        if (mapItem != null) {
             if (mapItem.getType() == MapItemType.CROSSING)
                 this.crossings.add((Crossing) mapItem);
+            else if (mapItem.getType() == MapItemType.ROAD)
+                this.roads.add((Road) mapItem);
+        }
     }
 
     public MapItem getItem(Position position) {
@@ -64,6 +68,10 @@ public class Map {
 
     public ArrayList<Crossing> getAllCrossings() {
         return this.crossings;
+    }
+
+    public ArrayList<Road> getallRoads() {
+        return this.roads;
     }
 
     public String toString() {

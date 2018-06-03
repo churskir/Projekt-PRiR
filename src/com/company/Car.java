@@ -14,17 +14,18 @@ public class Car implements Runnable{
     private Position position;
     private Position prevPosition = null;
     private Thread thread = null;
-    private String id;
+    private int id;
     private Velocity velocity;
     private Map map;
     private Random random = new Random();
     private boolean stop = false;
 
-    public Car(String id, Position position, Velocity velocity, Map map) {
+    public Car(int id, Position position, Velocity velocity, Map map) {
         this.position = position;
         this.id = id;
         this.map = map;
         this.velocity = velocity;
+        this.constructorPrint();
         this.start();
     }
 
@@ -53,6 +54,10 @@ public class Car implements Runnable{
 
     public String toString() {
         return "Car " + id + " on " + position;
+    }
+
+    private void constructorPrint() {
+        System.out.println(toString() + " with velocity " + velocity.toString() + " was created.");
     }
 
     private void move() {

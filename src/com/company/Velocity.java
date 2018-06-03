@@ -10,4 +10,8 @@ public class Velocity {
     public int getTimePerField() {
         return timePerField;
     }
+
+    public String toString() {
+        return "" + (timePerField / 1000.) + " f/s";
+    }
 }

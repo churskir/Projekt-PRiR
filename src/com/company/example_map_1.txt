@@ -1,0 +1,6 @@
+5 10
+RRRR......
+...R......
+RRRCRCRCRR
+.....R.R.R
+RRRRRR.RRR

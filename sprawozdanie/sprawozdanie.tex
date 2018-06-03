@@ -1,0 +1,49 @@
+\documentclass[a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{float}
+\selectlanguage{polish}
+
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm,
+}
+
+\title{Programowanie Równoległe i Rozproszone\\Projekt}
+\author{Radosław Churski \\ Paweł Kurbiel}
+
+\begin{document}
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+\tableofcontents
+\section{Temat projektu}
+Jako temat projektu wybraliśmy model symulacyjny prostego ruchu drogowego. Można w nim rozróżnić następujące podmioty:
+\begin{description}
+\item[samochód] porusza się po drogach i skrzyżowaniach. Jeśli napotka przed sobą skrzyżowanie może na nie wjechać tylko wtedy, kiedy odpowiedni sygnalizator świetlny ma zapalone zielone światło. Samochód zna tylko najbliższe otoczenie.
+\item[skrzyżowanie] jest wyposażone w dwa sygnalizatory świetlne, po jednym dla każdej z dwóch osi. Z założenia, samochody jadące na przeciw siebie "mają" to samo światło. Skrzyżowanie odpowiada za sterowanie sygnalizacją świetlną.
+\item[sygnalizacja świetlna] może mieć jeden z dwóch kolorów, zielony lub czerwony.
+\item[mapa] reprezentuje świat w którym poruszają się samochody i znajdują się drogi oraz skrzyżowania. Z mapy samochody dowiadują się o swoim najbliższym otoczeniu.
+\end{description}
+\section{Realizacja}
+\subsection{Uruchomienie; dane wejściowe}
+Program przyjmuje trzy argumenty:
+\begin{itemize}
+\item ścieżka do pliku z mapą
+\item liczba samochodów
+\item czas pracy programu
+\end{itemize}
+\subsubsection{Plik z mapą}
+\subsection{Implementacja samochodów}
+\subsection{Implementacja skrzyżowań ze światłami}
+\subsection{Wyjście}
+\section{Podsumowanie}
+\end{document}

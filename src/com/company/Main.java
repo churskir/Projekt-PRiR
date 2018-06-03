@@ -12,7 +12,7 @@ public class Main {
 
     private static ArrayList<Car> cars = new ArrayList<>();
     private static int minVelocity = 500;
-    private static int maxVelocity = 1500;
+    private static int maxVelocity = 1200;
 
     private static void printUsage() {
         System.out.println("Usage:\n[map file path] [number of cars] [time in seconds to terminate]");

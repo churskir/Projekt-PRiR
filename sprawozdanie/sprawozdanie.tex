@@ -42,6 +42,56 @@ Program przyjmuje trzy argumenty:
 \item czas pracy programu
 \end{itemize}
 \subsubsection{Plik z mapą}
+Można stwierdzić, że plik z mapą jest podzielony na dwie części. Jedną z nich jest pierwszy wiersza zawierający dwie liczby naturalne. Stanowią one informację o rozmiarach mapy.
+
+Drugą częścią jest właściwa mapa. Rozróżnialne są trzy rodzaje znaków składające się na mapę:
+\begin{itemize}
+\item znak drogi (\verb+R+)
+\item znak skrzyżowania (\verb+C+)
+\item znak pustego pola (\verb+.+)
+\end{itemize}
+
+Przykładowy plik z mapą:
+\begin{verbatim}
+5 10
+RRRR......
+...R......
+RRRCRCRCRR
+.....R.R.R
+RRRRRR.RRR
+\end{verbatim}
+Poniżej zamieszczony został fragment klasy \verb+mapReader+:
+\begin{verbatim}
+    private final static char roadChar = 'R';
+    private final static char crossingChar = 'C';
+
+    public static Map readMap(String path) {
+        [...]
+    }
+\end{verbatim}
+Atrybuty \verb+roadChar+ oraz \verb+crossingChar+ przechowują znaki, które podczas czytania pliku są interpretowane jako odpowiednio drogi i skrzyżowania. Każdy inny napotkany znak (oczywiście, oprócz końca linii) jest interpretowany jako puste pole.
+Takie rozwiązanie pozostawia możliwość na łatwe rozbudowanie obsługiwanych rodzajów pól mapy.
+\subsubsection{Liczba samochodów}
+Argument ten determinuje ile samochodów zostanie ''wypuszczonych,, na drogi. Są one generowane w następujący sposób:
+\begin{verbatim}
+        int numCars = Integer.parseInt(args[1]);
+        ArrayList<Road> roads = map.getallRoads();
+        Random random = new Random();
+
+        for (int i = 0; i < numCars; i++) {
+            cars.add(new Car(
+                i,
+                roads.get(random.nextInt(roads.size())).getPosition(),
+                new Velocity(random.nextInt(maxVelocity - minVelocity) + minVelocity),
+                map)
+            );
+        }
+\end{verbatim}
+W pętli \verb+for+ dodajemy do listy \verb+cars+ kolejne samochody, przekazując do konstruktora kolejne liczby naturalne stanowiące identyfikatory samochodów, pozycję losowanych pól dróg, losowaną prędkość jako obiekt klasy \verb+Velocity+ oraz mapę. Klasa \verb+Main+ posiada statyczne atrybuty determinujące minimalną i maksymalną prędkość z jaką mają się poruszać samochody.
+
+\subsubsection{Czas pracy programu}
+Ostatni parametrem przyjmowanym przez program jest informacja przez ile sekund ma pracować. Po tym, jak wszystkie potrzebne obiekty zostaną utworzone główny wątek programu jest usypiany na odpowiedni czas, po czym wywołuje metody terminujące na wszystkich obiektach pracujących z własnymi wątkami.
+
 \subsection{Implementacja samochodów}
 \subsection{Implementacja skrzyżowań ze światłami}
 \subsection{Wyjście}

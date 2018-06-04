@@ -4,7 +4,9 @@
 \contentsline {section}{\numberline {2}Realizacja}{1}
 \contentsline {subsection}{\numberline {2.1}Uruchomienie; dane wej\IeC {\'s}ciowe}{1}
 \contentsline {subsubsection}{\numberline {2.1.1}Plik z map\IeC {\k a}}{1}
-\contentsline {subsection}{\numberline {2.2}Implementacja samochod\IeC {\'o}w}{1}
-\contentsline {subsection}{\numberline {2.3}Implementacja skrzy\IeC {\.z}owa\IeC {\'n} ze \IeC {\'s}wiat\IeC {\l }ami}{1}
-\contentsline {subsection}{\numberline {2.4}Wyj\IeC {\'s}cie}{1}
-\contentsline {section}{\numberline {3}Podsumowanie}{1}
+\contentsline {subsubsection}{\numberline {2.1.2}Liczba samochod\IeC {\'o}w}{2}
+\contentsline {subsubsection}{\numberline {2.1.3}Czas pracy programu}{2}
+\contentsline {subsection}{\numberline {2.2}Implementacja samochod\IeC {\'o}w}{2}
+\contentsline {subsection}{\numberline {2.3}Implementacja skrzy\IeC {\.z}owa\IeC {\'n} ze \IeC {\'s}wiat\IeC {\l }ami}{2}
+\contentsline {subsection}{\numberline {2.4}Wyj\IeC {\'s}cie}{2}
+\contentsline {section}{\numberline {3}Podsumowanie}{2}

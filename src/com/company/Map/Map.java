@@ -75,7 +75,6 @@ public class Map {
     }
 
     public String toString() {
-        System.out.println(width + "x" + height);
         String out = "";
         for (int r = 0; r < height; r++) {
             for (int c = 0; c < width; c++) {
